@@ -1,8 +1,8 @@
 # litemall
 
-又一个小商场系统。
+后端 系统。
 
-litemall = Spring Boot后端 + Vue管理员前端 + 微信小程序用户前端 + Vue用户移动端
+Spring Boot后端 
 
 * [文档](https://linlinjava.gitbook.io/litemall)
 * [贡献](https://linlinjava.gitbook.io/litemall/contribute)
