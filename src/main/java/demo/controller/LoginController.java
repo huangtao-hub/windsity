@@ -37,23 +37,54 @@ public class LoginController {
 			return ResponseEntity.status(400).body(RespEntity.code(400).message("注册失败").body("567").build());
 		}
 	}
+//	/**
+//	 * 登录账号
+//	 * @return
+//	 */
+//	@RequestMapping("/loginuser{test}{username}{password}")
+//	public ResponseEntity<RespEntity> loginuser(@PathVariable String test, String username, String password) {
+//		String res = loginService.loginuser(username);
+//		System.out.println(res);
+//		if (password.equals(res)) {
+//			return ResponseEntity.status(200).body(RespEntity.code(200).message("登录成功").build());
+//		} else {
+//			return ResponseEntity.status(400).body(RespEntity.code(400).message("密码错误").body("567").build());
+//		}
+//
+//	}
 	/**
 	 * 登录账号
 	 * @return
 	 */
-	@RequestMapping("/loginuser{test}{username}{password}")
-	public ResponseEntity<RespEntity> loginuser(@PathVariable String test, String username, String password) {
-		String res = loginService.loginuser(username);
-		System.out.println(res);
-		if (password.equals(res)) {
-			return ResponseEntity.status(200).body(RespEntity.code(200).message("登录成功").build());
-		} else {
-			return ResponseEntity.status(400).body(RespEntity.code(400).message("密码错误").body("567").build());
-		}
-
+	@RequestMapping("/loginuser")
+	public String loginuser() {
+//		String res = loginService.loginuser(username);
+		System.out.println("请求成功");
+//		if (password.equals(res)) {
+//			return ResponseEntity.status(200).body(RespEntity.code(200).message("登录成功").build());
+//		} else {
+//			return ResponseEntity.status(400).body(RespEntity.code(400).message("密码错误").body("567").build());
+//		}
+String dec = "{\"code\":20000,\"data\":{\"token\":\"admin-token\"}}";
+	return dec;
 	}
 
-	/**
+	@RequestMapping("/info")
+	public String info() {
+//		String res = loginService.loginuser(username);
+		System.out.println("请求成功");
+//		if (password.equals(res)) {
+//			return ResponseEntity.status(200).body(RespEntity.code(200).message("登录成功").build());
+//		} else {
+//			return ResponseEntity.status(400).body(RespEntity.code(400).message("密码错误").body("567").build());
+//		}
+		String dec = "{\"code\":20000,\"data\":{\"roles\":[\"admin\"],\"introduction\":\"I am a super administrator\",\"avatar\":\"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif\",\"name\":\"Super Admin\"}}";
+		return dec;
+	}
+
+
+
+	/**http://localhost:8082/vue-element-admin/user/info?token=admin-token
 	 * 注册账号
 	 * @return
 	 */
